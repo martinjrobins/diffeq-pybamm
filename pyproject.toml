@@ -1,0 +1,66 @@
+[project]
+name = "diffeq-pybamm"
+version = "0.0.1" 
+description = "Converts a PyBaMM discretised model into a diffeq ds file"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE.txt"}
+keywords = ["modelling", "ode", "dae", "PyBaMM", "diffeq"]
+authors = [
+  {name = "Martin Robinson", email = "martinjrobins@gmail.com" }
+]
+maintainers = [
+  {name = "Martin Robinson", email = "martinjrobins@gmail.com" }
+]
+
+classifiers = [  # Optional
+  # How mature is this project? Common values are
+  #   3 - Alpha
+  #   4 - Beta
+  #   5 - Production/Stable
+  "Development Status :: 3 - Alpha",
+
+  # Pick your license as you wish
+  "License :: OSI Approved :: MIT License",
+
+  # Specify the Python versions you support here. In particular, ensure
+  # that you indicate you support Python 3. These classifiers are *not*
+  # checked by "pip install". See instead "python_requires" below.
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [
+  "pybamm"
+]
+
+# List additional groups of dependencies here (e.g. development
+# dependencies). Users will be able to install these using the "extras"
+# syntax, for example:
+#
+#   $ pip install sampleproject[dev]
+#
+# Similar to `dependencies` above, these must be valid existing
+# projects.
+[project.optional-dependencies] # Optional
+dev = ["flake8"]
+test = ["coverage"]
+
+[project.urls] 
+"Homepage" = "https://github.com/martinjrobins/diffeq-pybamm"
+"Bug Reports" = "https://github.com/martinjrobins/diffeq-pybamm/issues"
+"Source" = "https://github.com/martinjrobins/diffeq-pybamm"
+
+# The following would provide a command line executable called `sample`
+# which executes the function `main` from this package when invoked.
+[project.scripts]
+pybamm2diffeq = "diffeq_pybamm:main"
+
+[tool.setuptools]
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
